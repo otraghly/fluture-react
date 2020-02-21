@@ -2,7 +2,14 @@
   "name": "fluture-react",
   "version": "1.0.0",
   "description": "React hook for Fluture",
-  "main": "index.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otraghly/fluture-react.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
