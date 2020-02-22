@@ -18,14 +18,14 @@ exports.useFuture = function () {
             var finished = false;
             var cancel_fork = fluture_1.fork(function (rejection) {
                 finished = true;
+                reject(rejection);
                 last_cancel_fork_ref.current = undefined;
                 set_cancel_info(undefined);
-                reject(rejection);
             })(function (resolution) {
                 finished = true;
+                resolve(resolution);
                 last_cancel_fork_ref.current = undefined;
                 set_cancel_info(undefined);
-                resolve(resolution);
             })(fluture);
             // Already finished, returning noop cancel
             if (finished)
