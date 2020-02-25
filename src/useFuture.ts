@@ -21,7 +21,7 @@ export const useFuture = <L, R>() => {
     useEffect(() => cancel, [cancel])
 
     const cfork = useCallback(
-        <LT = L, RT = R>(reject: RejectFunction<LT>) => (resolve: ResolveFunction<RT>) =>
+        <LT = L>(reject: RejectFunction<LT>) => <RT = R>(resolve: ResolveFunction<RT>) =>
             (fluture: FutureInstance<LT, RT>): Cancel => {
                 let finished = false
                 const cancel_fork = fork
